@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.1.0.min.css">
+    <link rel="stylesheet" href="penemu.css">
+    <title>Sang Penemu</title>
+
+	<script type="text/javascript" charset="utf-8" src="list.min.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="share.js" ></script>
+	<script type="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></script>
+	<script type="text/javascript" src="jquery.mobile/jquery.mobile-1.1.0.min.js"></script>
+	  <script type="text/javascript" charset="utf-8">
+      
+        var menuOpen = false;
+	var menuDiv = "";
+
+	function init() {
+		document.addEventListener("deviceready", startup, false);
+	}
+
+	function startup() {
+		console.log("Business time...");
+		menuDiv = document.querySelector("#menu");
+		document.addEventListener("menubutton", doMenu, false);
+		document.addEventListener("backbutton", doClose, false);
+	}
+
+	function doMenu() {
+		console.log("The menu was clicked...");
+		if(menuOpen) {
+			console.log("close the menu");
+			menuDiv.style.display="none";
+			menuOpen = false;
+		} else {
+			console.log("open the menu");
+			menuDiv.style.display="block";
+			menuOpen = true;
+		}
+	}
+	
+	function doClose() {
+		console.log("The menu was clicked...");
+		if(menuOpen) {
+			console.log("close the menu");
+			menuDiv.style.display="none";
+			menuOpen = false;
+		}
+		else {
+			console.log("back hystory");
+			navigator.app.backHistory();
+		}
+	}
+</script>  
+<script>
+function sharing() {	
+	var share = new Share();
+		share.show({
+    subject: 'Sang Penemu',
+    text: 'Sang Penemu Android Application'},
+    function() {}, // Success function
+    function() {alert('Share failed')} // Failure function
+	);
+}
+</script>
+<style>
+	div#menu {
+		display:none;
+		position: fixed !important;
+	}
+</style>
+  </head>
+  <body onload="init();" id="stage" class="theme">
+    <div id="example-list" data-role="page" data-theme="c" data-content-theme="c">
+
+		<div data-role="header" data-theme="c">
+			<h1>Sang Penemu</h1>
+			<a href="index.html" rel="external" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Home"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow">&nbsp;</span></span></a>
+		</div><!-- /header -->
+		<div id="search">
+			<input type="text" class="search" placeholder="search">
+		</div>
+
+		<div data-role="content">	
+			<ul class="list">
+       			<li>
+       				<center><a href="#detail-laptop" data-ajax="false"><img src="images/laptop.png"></a></center>
+           			<center><span class="feature">Laptop</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Laptop ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/lcd.png"></a></center>
+           			<center><span class="feature">LCD</span> <br /></center>
+           			<center><small class="description">Siapa Penemu LCD ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/ac.png"></a></center>
+           			<center><span class="feature">Air Conditioner</span> <br /></center>
+           			<center><small class="description">Siapa Penemu AC ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/atm.png"></a></center>
+           			<center><span class="feature">Mesin ATM</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Mesin ATM ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/compactdisc.png"></a></center>
+           			<center><span class="feature">Compact Disc</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Compact Disc ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/computer.png"></a></center>
+           			<center><span class="feature">Komputer</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Komputer ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/copy.png"></a></center>
+           			<center><span class="feature">Mesin Fotokopi</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Fotokopi ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/radio.png"></a></center>
+           			<center><span class="feature">Radio</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Radio ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/rocket.png"></a></center>
+           			<center><span class="feature">Roket</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Roket ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/trafficlight.png"></a></center>
+           			<center><span class="feature">Lampu lalu lintas</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Lampu Lalu Lintaas ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/tv.png"></a></center>
+           			<center><span class="feature">Televisi</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Televisi ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/bohlam.png"></a></center>
+           			<center><span class="feature">Bola Lampu Pijar</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Bola Lampu Pijar ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/camera.png"></a></center>
+           			<center><span class="feature">Kamera Kodak</span> <br /></center>
+           			<center><small class="description">Siapa Penemu kamera Kodak ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/diesel.png"></a></center>
+           			<center><span class="feature">Diesel</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Diesel ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/helikopter.png"></a></center>
+           			<center><span class="feature">Helikopter</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Helikopter ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/kalkulator.png"></a></center>
+           			<center><span class="feature">Kalkulator</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Kalkulator ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/pesawat.png"></a></center>
+           			<center><span class="feature">Pesawat</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Pesawat ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/telepon.png"></a></center>
+           			<center><span class="feature">Kamera Telepon</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Telepon ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/traktor.png"></a></center>
+           			<center><span class="feature">Traktor</span> <br /></center>
+           			<center><small class="description">Siapa Penemu Traktor ?</small></center>
+       			</li>
+       			<li>
+       				<center><a href="#"><img src="images/xray.png"></a></center>
+           			<center><span class="feature">X-Ray</span> <br /></center>
+           			<center><small class="description">Siapa Penemu X-Ray ?</small></center>
+       			</li>
+       		</ul>		
+		</div><!-- /content -->
+
+</div>
+	<div id="detail-laptop" class="detail" data-role="page" data-theme="c" data-content-theme="c">
+		<div class="kepala">
+			<img width="50" src="images/laptop.png">
+			<h3>Penemu Laptop</h3>
+			<a href="#example-list"><img src="back.png"></a>
+		</div>
+		<div class="who">
+			<center><img src="images/laptop-adamosborne.png"></center>
+			<center><h2>Adam Osborne (April 1981)</h2></center>
+		</div>
+		<div class="keterangan">
+				<p>
+					<i>Adam Osborne</i> dilahirkan di Thailand tahun 1939. Sejak kecil ia sangat tekun belajar
+				</p>
+				<p class="pendidikan">
+					<i>Pendidikan :</i> Universitas Birmingham, Universitas Delaware.
+				</p>
+		</div>
+	</div>
+
+<div id="menu" data-role="dialog" tabindex="0" class="ui-page ui-body-c ui-dialog ui-overlay-a ui-page-active" style="min-height: 366px; ">
+	<div role="dialog" class="ui-dialog-contain ui-corner-all ui-overlay-shadow">
+		<div data-role="header" data-theme="d" class="ui-corner-top ui-header ui-bar-d" role="banner">
+			<a href="#" onclick="close();" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-btn ui-btn-up-d ui-shadow ui-btn-corner-all ui-btn-icon-notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="d" title="Close"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Close</span><span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span></span></a>
+			<h1 class="ui-title" role="heading" aria-level="1">Menu</h1>
+		</div>
+		<div data-role="content" data-theme="c" class="ui-corner-bottom ui-content ui-body-c" role="main">
+			
+			<a href="#" onclick="sharing();" data-role="button" data-rel="back" data-theme="b" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-b">
+				<span class="ui-btn-inner ui-btn-corner-all">
+					<span class="ui-btn-text">Share To Friends</span>
+				</span>
+			</a>
+			<center><a href="#" onclick="navigator.app.exitApp();" data-role="button" data-rel="back" data-theme="e" class="ui-btn ui-btn-inline ui-shadow ui-btn-corner-all ui-btn-up-e" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-b">
+				<span class="ui-btn-inner ui-btn-corner-all">
+					<span class="ui-btn-text">Exit</span>
+				</span>
+			</a>
+			</center>
+		</div>
+	</div>
+</div>
+	
+	<script type="text/javascript">
+		var options = {
+    		valueNames: [ 'feature', 'description' ]
+		};
+
+			var featureList = new List('example-list', options);
+	</script>
+  </body>
+</html>
